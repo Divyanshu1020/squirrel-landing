@@ -5,9 +5,11 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
+  CarouselApi,
 } from "@/components/ui/carousel";
 import { Pause, Star } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import Autoplay from "embla-carousel-autoplay";
 
 const testimonials = [
   {
@@ -41,6 +43,23 @@ const testimonials = [
 
 export default function TestimonialsSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [api, setApi] = useState<CarouselApi>();
+
+  // Update current slide when carousel changes
+  useEffect(() => {
+    if (!api) return;
+
+    const onSelect = () => {
+      setCurrentSlide(api.selectedScrollSnap());
+    };
+
+    api.on("select", onSelect);
+    onSelect(); // Set initial slide
+
+    return () => {
+      api.off("select", onSelect);
+    };
+  }, [api]);
 
   const renderStars = (rating: number) => {
     return Array.from({ length: 5 }, (_, i) => (
@@ -53,12 +72,19 @@ export default function TestimonialsSection() {
     ));
   };
 
+  // Function to go to specific slide
+  const goToSlide = (index: number) => {
+    if (api) {
+      api.scrollTo(index);
+    }
+  };
+
   return (
     <div className="w-full bg-[#F6F6F6] py-28 ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="w-full text-6xl mx-auto font-bold text-center mb-8 multi-line-gradient primary-font">
+          <h2 className="w-full md:text-6xl text-5xl sm:text-5xl mx-auto font-bold text-center mb-4 md:mb-8 multi-line-gradient primary-font">
             Clients Love Us
           </h2>
         </div>
@@ -67,7 +93,18 @@ export default function TestimonialsSection() {
         <div className="relative">
           <Carousel
             className="w-full"
-            // onSelect={(index) => setCurrentSlide(index)}
+            setApi={setApi}
+            plugins={[
+              Autoplay({
+                delay: 3000,
+                stopOnInteraction: false,
+                stopOnMouseEnter: true,
+              }),
+            ]}
+            opts={{
+              align: "start",
+              loop: true,
+            }}
           >
             <CarouselContent className="-ml-2 md:-ml-4">
               {testimonials.map((testimonial) => (
@@ -85,17 +122,17 @@ export default function TestimonialsSection() {
                       </div>
 
                       {/* Quote */}
-                      <blockquote className="text-xl font-semibold md:text-xl text-gray-800 italic mb-8 leading-relaxed">
+                      <blockquote className="text-xl font-semibold md:text-xl text-gray-800 italic mb-8 leading-relaxed secondary-font">
                         &quot;{testimonial.quote}&quot;
                       </blockquote>
 
                       {/* Name and Location */}
                       <div className="flex justify-between mt-auto">
                         <div className="mb-4">
-                          <h4 className="font-semibold text-black text-lg">
+                          <h4 className="font-semibold text-black text-lg secondary-font">
                             {testimonial.name}
                           </h4>
-                          <p className="text-gray-500 text-sm">
+                          <p className="text-gray-500 text-sm secondary-font">
                             {testimonial.location}
                           </p>
                         </div>
@@ -117,10 +154,10 @@ export default function TestimonialsSection() {
             {testimonials.map((_, index) => (
               <button
                 key={index}
-                className={`w-2 h-2 rounded-full transition-colors ${
+                className={`w-2 cursor-pointer h-2 rounded-full transition-colors ${
                   index === currentSlide ? "bg-amber-900" : "bg-gray-300"
                 }`}
-                onClick={() => setCurrentSlide(index)}
+                onClick={() => goToSlide(index)}
                 aria-label={`Go to slide ${index + 1}`}
               />
             ))}

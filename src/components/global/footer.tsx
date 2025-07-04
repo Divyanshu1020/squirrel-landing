@@ -3,16 +3,16 @@ import React from "react";
 
 const footerLinks = {
   column1: [
-    { name: "About", href: "#" },
-    { name: "Work Gallery", href: "#" },
-    { name: "Pricing", href: "#" },
-    { name: "Blog", href: "#" },
-    { name: "Contact", href: "#" },
+    { name: "About", href: "#about" },
+    { name: "Services", href: "#services" },
+    { name: "Our Work", href: "#our-work" },
+    { name: "Blog", href: "#blog" },
+    { name: "Contact", href: "#contact" },
   ],
   column2: [
-    { name: "Faq's", href: "#" },
-    { name: "Privacy Policy", href: "#" },
-    { name: "Terms", href: "#" },
+    { name: "Faq's", href: "#faq" },
+    { name: "Privacy Policy", href: "#privacy-policy" },
+    { name: "Terms", href: "#terms" },
   ],
 };
 
@@ -20,10 +20,10 @@ function Footer() {
   return (
     <footer className="  ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
-        <div className="grid grid-cols-1  md:grid-cols-[1.5fr_1fr_1fr_1fr] gap-8 md:gap-8 lg:gap-14 mb-12">
+        <div className="grid grid-cols-2  md:grid-cols-[1.5fr_1fr_1fr_1fr] gap-8 md:gap-8 lg:gap-14 mb-12">
           {/* Newsletter Subscription */}
-          <div className="">
-            <h4 className="text-2xl md:text-3xl secondary-font font-semibold text-gray-900 mb-6">
+          <div className="col-span-2 md:col-span-1">
+            <h4 className="text-3xl md:text-3xl secondary-font font-semibold text-gray-900 mb-6">
               Subscribe to our newsletter
             </h4>
             <div className="flex gap-2 border p-1.5 border-gray-300  rounded-md max-w-md">
@@ -60,7 +60,7 @@ function Footer() {
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-gray-600 secondary-font hover:text-gray-900 transition-colors"
+                    className="text-gray-800 font-medium secondary-font hover:text-gray-900 transition-colors"
                   >
                     {link.name}
                   </a>
@@ -70,13 +70,13 @@ function Footer() {
           </div>
 
           {/* Contact Info */}
-          <div>
+          <div className="">
             <ul className="space-y-3 mb-6">
               {footerLinks.column2.map((link) => (
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-gray-600 secondary-font hover:text-gray-900 transition-colors"
+                    className="text-gray-800 font-medium secondary-font hover:text-gray-900 transition-colors"
                   >
                     {link.name}
                   </a>
@@ -84,13 +84,12 @@ function Footer() {
               ))}
             </ul>
           </div>
-          <div className="space-y-4">
-            <p className="text-gray-900 font-medium secondary-font">
+          <div className="col-span-2 md:col-span-1 md:space-y-4 space-y-2">
+            <p className="text-gray-900 text-lg md:text-xl font-medium secondary-font">
               210 Wallent Street, California,
-              <br />
               Main OC, USA
             </p>
-            <p className="text-gray-900 font-bold text-lg secondary-font">
+            <p className="text-gray-900 font-medium text-lg secondary-font">
               (+91) 0187 34 377
             </p>
 
@@ -98,21 +97,21 @@ function Footer() {
             <div className="flex gap-3">
               <a
                 href="#"
-                className="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center text-white hover:bg-orange-600 transition-colors"
+                className="md:w-9 md:h-9 w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center text-white hover:bg-primary transition-colors"
               >
-                <Facebook className="w-5 h-5" />
+                <Facebook className=" w-4 h-4" />
               </a>
               <a
                 href="#"
-                className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-white hover:bg-gray-900 transition-colors"
+                className="md:w-9 md:h-9 w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center text-white hover:bg-primary transition-colors"
               >
-                <Twitter className="w-5 h-5" />
+                <Twitter className=" w-4 h-4" />
               </a>
               <a
                 href="#"
-                className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-white hover:bg-gray-900 transition-colors"
+                className="md:w-9 md:h-9 w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center text-white  hover:bg-primary transition-colors"
               >
-                <Linkedin className="w-5 h-5" />
+                <Linkedin className=" w-4 h-4" />
               </a>
             </div>
           </div>

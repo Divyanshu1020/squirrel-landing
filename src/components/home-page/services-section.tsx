@@ -29,18 +29,18 @@ function ServicesSection() {
     },
   ];
   return (
-    <div className="min-h-screen bg-white  py-28">
-      <h2 className="w-full text-6xl mx-auto font-bold text-center mb-8 multi-line-gradient primary-font">
+    <div id="services" className="min-h-screen bg-white  py-28">
+      <h2 className="w-full md:text-6xl text-5xl sm:text-5xl mx-auto font-bold text-center mb-4 md:mb-8 multi-line-gradient primary-font">
         Our Services
       </h2>
-      <p className="text-center text-lg mb-20 secondary-font">
+      <p className="text-center md:text-lg text-base mb-20 secondary-font">
         Our founders Dustin Moskovitz and Justin Rosenstein met while leading
         Engineering.
         <br />
         Tortor porttitor tortor vitae commodo et.
       </p>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid w-full grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-6 ">
+        <div className="grid  grid-cols-1 sm:grid-cols-2 justify-around lg:grid-cols-3 w-fit mx-auto gap-6 ">
           {features.map((feature, index) => (
             <Card feature={feature} index={index} key={index} />
           ))}
