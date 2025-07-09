@@ -7,6 +7,7 @@ import TestimonialsSection from './testimonials-section'
 import FAQSection from './faq-section'
 import Footer from '../global/footer'
 import CallToSection from './call-to-section'
+import Contact from './Contact'
 
 function HomePage() {
   return (
@@ -18,6 +19,7 @@ function HomePage() {
       <TestimonialsSection />
       <FAQSection />
       <CallToSection />
+      <Contact />
       <Footer />
       
 
