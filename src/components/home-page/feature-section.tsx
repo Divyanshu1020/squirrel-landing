@@ -29,7 +29,7 @@ export default function FeatureSection() {
   ];
 
   return (
-    <div id="features" className=" min-h-screen bg-[#F6F6F6]  py-28">
+    <div id="features" className="  bg-[#F6F6F6]  py-28">
       <div className="max-w-7xl mx-auto px-4  sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 justify-around items-start gap-16 lg:gap-0">
           {/* Left side - Main headline */}

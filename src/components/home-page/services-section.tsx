@@ -29,7 +29,7 @@ function ServicesSection() {
     },
   ];
   return (
-    <div id="services" className="min-h-screen bg-white  py-28">
+    <div id="services" className=" bg-white  py-28">
       <h2 className="w-full md:text-6xl text-5xl sm:text-5xl mx-auto font-bold text-center mb-4 md:mb-8 multi-line-gradient primary-font">
         Our Services
       </h2>

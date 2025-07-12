@@ -128,11 +128,11 @@ export default function ContactForm() {
                     render={({ field }) => (
                       <FormItem>
                         <FormLabel>Full Name</FormLabel>
-                        <div className="p-[2px] rounded-lg primary-gradient">
+                        <div className="p-[2px] rounded-full primary-gradient">
                           <Input
                             type="text"
                             placeholder="Enter your name"
-                            className="h-11 border-0 bg-white focus:ring-0 focus:ring-offset-0 outline-none rounded-md"
+                            className="px-4 h-11 border-0 bg-white focus:ring-0 focus:ring-offset-0 outline-none rounded-full"
                             {...field}
                           />
                         </div>
@@ -150,11 +150,11 @@ export default function ContactForm() {
                       <FormItem>
                         <FormLabel>Email Address</FormLabel>
                         <FormControl>
-                        <div className="p-[2px] rounded-lg primary-gradient">
+                        <div className="p-[2px] rounded-full primary-gradient">
                           <Input
                             type="email"
                             placeholder="Enter your email"
-                            className="h-11 border-0 bg-white focus:ring-0 focus:ring-offset-0 outline-none rounded-md"
+                            className="px-4 h-11 border-0 bg-white focus:ring-0 focus:ring-offset-0 outline-none rounded-full"
                             {...field}
                           />
                         </div>
@@ -173,11 +173,11 @@ export default function ContactForm() {
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel>Subject</FormLabel>
-                      <div className="p-[2px] rounded-lg primary-gradient">
+                      <div className="p-[2px] rounded-full primary-gradient">
                           <Input
                             type="text"
                             placeholder="Enter your subject"
-                            className="h-11 border-0 bg-white focus:ring-0 focus:ring-offset-0 outline-none rounded-md"
+                            className="px-4 h-11 border-0 bg-white focus:ring-0 focus:ring-offset-0 outline-none rounded-full"
                             {...field}
                           />
                         </div>
@@ -195,10 +195,10 @@ export default function ContactForm() {
                     <FormItem>
                       <FormLabel>Message</FormLabel>
                       <FormControl>
-                        <div className="p-[2px] rounded-lg primary-gradient">
+                        <div className="p-[2px] rounded-3xl primary-gradient">
                         <Textarea 
-                          placeholder="Please provide details about your inquiry..." 
-                          className="min-h-32 resize-none bg-white focus:ring-0 focus:ring-offset-0 outline-none rounded-md"
+                          placeholder="Please  provide details about your inquiry..." 
+                          className="min-h-32 resize-none px-4 py-2 bg-white focus:ring-0 focus:ring-offset-0 outline-none rounded-3xl"
                           {...field} 
                         />
                         </div>
@@ -209,7 +209,7 @@ export default function ContactForm() {
                 />
               </motion.div>
 
-              <div className="p-[2px] rounded-lg primary-gradient inline-block w-full md:w-auto">
+              <div className="p-[2px] rounded-full primary-gradient inline-block w-full md:w-auto">
                 <Button 
                   type="submit" 
                   className="bg-transparent hover:bg-transparent cursor-pointer w-full md:w-auto   px-8 py-6 rounded-full text-lg font-medium  border-0  secondary-font text-white   "
