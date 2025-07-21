@@ -1,4 +1,5 @@
 import { Facebook, Linkedin, Twitter } from "lucide-react"; 
+import Image from "next/image";
 import React from "react";
 
 const footerLinks = {
@@ -22,36 +23,19 @@ function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
         <div className="grid grid-cols-2  md:grid-cols-[1.5fr_1fr_1fr_1fr] gap-8 md:gap-8 lg:gap-14 mb-12">
           {/* Newsletter Subscription */}
-          <div className="col-span-2 md:col-span-1">
-            <h4 className="text-3xl md:text-3xl secondary-font font-semibold text-gray-900 mb-6">
-              Subscribe to our newsletter
-            </h4>
-            <div className="flex gap-2 border p-1.5 border-gray-300  rounded-md max-w-md">
-              <input
-                type="email"
-                placeholder="Your email address"
-                className="flex-1 border-none outline-none focus:border-orange-500"
+          <div className="flex flex-col col-span-2 md:col-span-1     gap-1  ">
+              <Image
+                src={"/images/logo.png"}
+                alt="Logo"
+                quality={100}
+                height={64}
+                width={80}
+                className="h-12 w-16 sm:h-16 sm:w-20"
               />
-              <button
-                type="submit"
-                className="p-2 rounded-md transition-colors flex items-center justify-center cursor-pointer hover:bg-gray-100"
-              >
-                <svg
-                  className="w-7 h-6 text-gray-600"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M18 8l4 4m0 0l-4 4m4-4H3"
-                  />
-                </svg>
-              </button>
+              <span className="text-black text-nowrap font-medium  text-2xl sm:text-5xl">
+                The Squirrel
+              </span>
             </div>
-          </div>
 
           {/* Navigation Links */}
           <div>

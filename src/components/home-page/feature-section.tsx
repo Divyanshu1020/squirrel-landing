@@ -1,30 +1,24 @@
-import { Globe, Mic, Type, AudioWaveformIcon as Waveform } from "lucide-react";
+import { MessageCircleMore, Bot, Camera } from "lucide-react";
 import Card from "../global/card";
 
 export default function FeatureSection() {
   const features = [
     {
-      icon: Mic,
-      title: "Rapid AI Voice Cloning",
-      description: "Create authentic AI voices with a simple 10-second sample.",
+      icon: MessageCircleMore,
+      title: "AI Chatbot for Website",
+      description: "AI Chatbot for Website that can be used to chat with your website visitors.",
     },
     {
-      icon: Waveform,
-      title: "Hyper-realistic AI Voices",
+      icon: Bot,
+      title: "Appointment Booking inside Instagram",
       description:
-        "With just 10 seconds of audio, generate lifelike AI voices effortlessly.",
+        "Appointment Booking inside Instagram that can be used to book appointments with your website visitors.",
     },
     {
-      icon: Type,
-      title: "Text-to-Speech",
+      icon: Camera,
+      title: "AI Product Protography",
       description:
-        "Control AI voice nuances with your own voice input, ideal for films & games.",
-    },
-    {
-      icon: Globe,
-      title: "100+ Multilingual Support",
-      description:
-        "Switch easily between over 100+ languages using the cloned voice for clarity.",
+        "AI Product Protography that can be used to create product images for your website visitors.",
     },
   ];
 

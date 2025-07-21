@@ -1,32 +1,27 @@
-import { Globe, Mic, Type, AudioWaveformIcon as Waveform } from "lucide-react";
+import { Boxes, Workflow, Briefcase } from "lucide-react";
 import React from "react";
 import Card from "../global/card";
 
 function ServicesSection() {
   const features = [
     {
-      icon: Mic,
-      title: "Rapid AI Voice Cloning",
-      description: "Create authentic AI voices with a simple 10-second sample.",
+      icon: Boxes,
+      title: "Website Development",
+      description: "Website Development for small businesses.",
     },
     {
-      icon: Waveform,
-      title: "Hyper-realistic AI Voices",
+      icon: Workflow,
+      title: "AI Automation",
       description:
-        "With just 10 seconds of audio, generate lifelike AI voices effortlessly.",
+        "AI Automation for small businesses.",
     },
     {
-      icon: Type,
-      title: "Text-to-Speech",
+      icon: Briefcase,
+      title: "Building Product Prototype",
       description:
-        "Control AI voice nuances with your own voice input, ideal for films & games.",
+        "Building Product Prototype for small businesses.",
     },
-    {
-      icon: Globe,
-      title: "100+ Multilingual Support",
-      description:
-        "Switch easily between over 100+ languages using the cloned voice for clarity.",
-    },
+    
   ];
   return (
     <div id="services" className=" bg-white  py-28">

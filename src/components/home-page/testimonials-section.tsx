@@ -15,31 +15,56 @@ const testimonials = [
   {
     id: 1,
     quote:
-      "Quick solutions coupled with extraordinary performance—a recommendation that's unequivocal.",
-    name: "Musa Delimuza",
-    location: "Milan, Italy",
-    rating: 3,
+      "The chatbot integration from The Squirrel has truly transformed our user experience. It offers instant support and makes navigating our platform seamless.",
+    name: "Aniket Thakur",
+    role: "Founder",
+    company: "Aidcircle.in",
+    rating: 5,
     avatar: "/placeholder.svg?height=80&width=80",
   },
   {
     id: 2,
     quote:
-      "Highly recommend this reliable SaaS provider for seamless workflow optimization.",
-    name: "MD Rashed Kabir",
-    location: "California, USA",
+      "The Squirrel has been a reliable partner in developing AI-powered chatbots and complex web projects. Their solutions are always innovative and on-point.",
+    name: "Shodhan Moolya",
+    role: "Founder",
+    company: "Torq Designs",
     rating: 5,
     avatar: "/placeholder.svg?height=80&width=80",
   },
   {
     id: 3,
     quote:
-      "Outstanding service quality and exceptional customer support that exceeds expectations every time.",
-    name: "Sarah Johnson",
-    location: "London, UK",
+      "From design to deployment, The Squirrel's team captured our vision perfectly. Their responsiveness and commitment to quality are unmatched.",
+    name: "Cameron Norris",
+    role: "Co-founder",
+    company: "Social Hardware",
+    rating: 5,
+    avatar: "/placeholder.svg?height=80&width=80",
+  },
+  {
+    id: 4,
+    quote:
+      "The chatbot has helped us handle technical queries efficiently and freed up our team's time. The Squirrel has been incredibly responsive and supportive.",
+    name: "Cameron Norris",
+    role: "Co-founder",
+    company: "Social Hardware",
+    rating: 5,
+    avatar: "/placeholder.svg?height=80&width=80",
+  },
+  {
+    id: 5,
+    quote:
+      "We’ve collaborated on multiple projects with The Squirrel, and they consistently deliver high-quality websites and apps without any hassle.",
+    name: "Krish Subramaniam",
+    role: "Founder",
+    company: "Quark Marketing",
     rating: 5,
     avatar: "/placeholder.svg?height=80&width=80",
   },
 ];
+
+
 
 export default function TestimonialsSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -126,14 +151,14 @@ export default function TestimonialsSection() {
                         &quot;{testimonial.quote}&quot;
                       </blockquote>
 
-                      {/* Name and Location */}
+                      {/* Name and company */}
                       <div className="flex justify-between mt-auto">
                         <div className="mb-4">
                           <h4 className="font-semibold text-black text-lg secondary-font">
                             {testimonial.name}
                           </h4>
                           <p className="text-gray-500 text-sm secondary-font">
-                            {testimonial.location}
+                            {testimonial.company}
                           </p>
                         </div>
 

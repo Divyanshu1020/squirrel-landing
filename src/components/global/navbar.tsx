@@ -14,6 +14,16 @@ import { Menu } from "lucide-react";
 import Link from "next/link";
 // import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
+} from "@/components/ui/navigation-menu"
+import Image from "next/image";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -57,18 +67,87 @@ export function Navbar() {
             className="flex items-center space-x-2"
             // whileHover={{ scale: 1.05 }}
           >
-            <Link
-              href="/"
-              className={`flex text-xl items-center cursor-pointer ${
-                isHeroVisible ? "text-white" : "text-black"
-              }`}
-            >
-              The Squirrel
+          <Link href="/" className="flex items-center space-x-1 sm:space-x-2">
+              <Image
+                src={"/images/logo.png"}
+                quality={100}
+                width={48}
+                height={40}
+                alt="Logo"
+                className="h-8 w-10 sm:h-10 sm:w-12"
+              />
+              <span className={` font-semibold text-sm sm:text-xl ${isHeroVisible ? "text-white" : "text-black"}`}>
+                The Squirrel
+              </span>
             </Link>
           </motion.div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <NavigationMenu className="hidden md:block">
+            <NavigationMenuList>
+              <NavigationMenuItem>
+                <NavigationMenuLink asChild className={navigationMenuTriggerStyle() }>
+                  <Link className={`hover:text-primary ${isHeroVisible ? "text-white" : "text-black"}`} href="#home">Home</Link>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className={`hover:text-primary focus:text-primary ${isHeroVisible ? "text-white" : "text-black"}`}>Products</NavigationMenuTrigger>
+                <NavigationMenuContent>
+            <ul className="grid w-[300px] gap-4">
+              <li>
+                <NavigationMenuLink asChild>
+                  <Link href="#">
+                    <div className="font-medium">AI Chatbot</div>
+                  </Link>
+                </NavigationMenuLink>
+                <NavigationMenuLink asChild>
+                  <Link href="#">
+                    <div className="font-medium">Appointment booking inside Instagram</div>
+                  </Link>
+                </NavigationMenuLink>
+                <NavigationMenuLink asChild>
+                  <Link href="#">
+                    <div className="font-medium">AI Product Protography</div>
+                  </Link>
+                </NavigationMenuLink>
+              </li>
+            </ul>
+          </NavigationMenuContent>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className={`hover:text-primary focus:text-primary ${isHeroVisible ? "text-white" : "text-black"}`}>Services</NavigationMenuTrigger>
+                <NavigationMenuContent>
+            <ul className="grid w-[300px] gap-4">
+              <li>
+                <NavigationMenuLink asChild>
+                  <Link href="#">
+                    <div className="font-medium">Website Development</div>
+                  </Link>
+                </NavigationMenuLink>
+                <NavigationMenuLink asChild>
+                  <Link href="#">
+                    <div className="font-medium">AI Automation</div>
+                  </Link> 
+                </NavigationMenuLink>
+                <NavigationMenuLink asChild>
+                  <Link href="#">
+                    <div className="font-medium">Building Product Prototype</div>
+                  </Link>
+                </NavigationMenuLink>
+              </li>
+            </ul>
+          </NavigationMenuContent>
+              </NavigationMenuItem>
+            
+              <NavigationMenuItem>
+                <NavigationMenuLink asChild className={navigationMenuTriggerStyle() }>
+                  <Link className={`hover:text-primary ${isHeroVisible ? "text-white" : "text-black"}`} href="#contact">Contact</Link>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
+
+          {/* <div className="hidden md:flex items-center space-x-8">
             <Link
               href="#home"
               className={`transition-colors hover:text-primary text-xl ${
@@ -109,13 +188,13 @@ export function Navbar() {
             >
               Contact
             </Link>
-          </div>
+          </div> */}
 
           {/* Auth Section */}
           <div className="hidden md:flex items-center space-x-4 ">
             <div className="flex items-center space-x-4">
               <Link
-                href="/sign-in"
+                href="https://dashboard.thesquirrel.tech/login"
                 className={`transition-colors hover:text-primary text-lg ${
                   isHeroVisible ? "text-white" : "text-black"
                 }`}
@@ -128,6 +207,9 @@ export function Navbar() {
                     ? "text-white border-white"
                     : "text-black border-black"
                 } rounded-full hover:bg-white hover:text-primary`}
+                onClick={() => {
+                  window.open("https://dashboard.thesquirrel.tech/signup", "_blank");
+                }}
               >
                 Sign Up
               </Button>

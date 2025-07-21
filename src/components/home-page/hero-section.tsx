@@ -1,3 +1,4 @@
+'use client'
 import Image from 'next/image'
 
 function HeroSection() {
@@ -10,9 +11,9 @@ function HeroSection() {
       
       <div className='relative z-10 flex flex-col justify-center items-center min-h-[560px] h-[calc(70vh+60px)] lg:h-[110vh] px-4 text-center'>
         {/* Main Heading */}
-        <h1 className='text-6xl md:text-8xl lg:text-9xl font-semibold primary-font text-white mb-8 '>
-          We - Craft<br />
-          Business
+        <h1 className='text-5xl md:text-7xl lg:text-8xl font-semibold primary-font text-white mb-8 '>
+        We Help Brands<br />
+          Adopt AI
         </h1>
         
         {/* Subtitle */}
@@ -22,7 +23,9 @@ function HeroSection() {
         
         {/* CTA Button */}
         <button className='group secondary-font flex items-center gap-3 bg-transparent border-2 border-white/30 hover:border-white text-white px-8 py-4 rounded-full transition-all duration-300 hover:bg-white/10 backdrop-blur-sm'>
-          <span className='text-lg font-medium'>Get Started</span>
+          <span onClick={() => {
+            window.open("https://dashboard.thesquirrel.tech", "_blank");
+          }} className='text-lg font-medium'>Get Started</span>
           <div className='w-8 h-8 bg-white rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300'>
             <svg className='w-4 h-4 text-black' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
               <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M9 5l7 7-7 7' />
