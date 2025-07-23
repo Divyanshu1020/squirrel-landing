@@ -121,12 +121,12 @@ export function Navbar() {
                   <ul className="grid w-[300px] gap-4">
                     <li>
                       <NavigationMenuLink asChild>
-                        <Link href="#">
+                        <Link href="https://chat.thesquirrel.tech/">
                           <div className="font-medium">AI Chatbot</div>
                         </Link>
                       </NavigationMenuLink>
                       <NavigationMenuLink asChild>
-                        <Link href="#">
+                        <Link href="https://smartinsta.thesquirrel.tech/">
                           <div className="font-medium">
                             Appointment booking inside Instagram
                           </div>
