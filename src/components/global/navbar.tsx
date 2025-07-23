@@ -240,7 +240,7 @@ export function Navbar() {
           {/* Auth Section */}
           <div className="hidden md:flex items-center space-x-4 ">
             <div className="flex items-center space-x-4">
-              <Link
+              {/* <Link
                 href="https://dashboard.thesquirrel.tech/login"
                 className={`transition-colors hover:text-primary text-lg ${
                   isHeroVisible ? "text-white" : "text-black"
@@ -262,6 +262,16 @@ export function Navbar() {
                 }}
               >
                 Sign Up
+              </Button> */}
+              <Button
+                className={`bg-transparent border px-6 text-lg ${
+                  isHeroVisible
+                    ? "text-white border-white"
+                    : "text-black border-black"
+                } rounded-full hover:bg-white hover:text-primary`}
+                
+              >
+                <Link href="#contact" > Get Started </Link>
               </Button>
             </div>
           </div>

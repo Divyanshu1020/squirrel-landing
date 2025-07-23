@@ -1,4 +1,4 @@
-import { Boxes, Workflow, Briefcase } from "lucide-react";
+import { Boxes, Briefcase, Workflow } from "lucide-react";
 import React from "react";
 import Card from "../global/card";
 
@@ -7,21 +7,18 @@ function ServicesSection() {
     {
       icon: Boxes,
       title: "Website Development",
-      description: "Website Development for small businesses.",
+      description: "Website Development for businesses.",
     },
     {
       icon: Workflow,
       title: "AI Automation",
-      description:
-        "AI Automation for small businesses.",
+      description: "AI Automation for businesses.",
     },
     {
       icon: Briefcase,
       title: "Building Product Prototype",
-      description:
-        "Building Product Prototype for small businesses.",
+      description: "Building Product Prototype for businesses.",
     },
-    
   ];
   return (
     <div id="services" className=" bg-white  py-28">
@@ -29,10 +26,10 @@ function ServicesSection() {
         Our Services
       </h2>
       <p className="text-center md:text-lg text-base mb-20 secondary-font">
-        Our founders Dustin Moskovitz and Justin Rosenstein met while leading
-        Engineering.
+        We help businesses thrive by building modern websites, automating
+        workflows with AI, and rapidly developing product prototypes.
         <br />
-        Tortor porttitor tortor vitae commodo et.
+        Our goal is to turn your ideas into real, scalable solutions.
       </p>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid  grid-cols-1 sm:grid-cols-2 justify-around lg:grid-cols-3 w-fit mx-auto gap-6 ">

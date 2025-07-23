@@ -7,9 +7,10 @@ import {
   CarouselItem,
   CarouselApi,
 } from "@/components/ui/carousel";
-import { Pause, Star } from "lucide-react";
+import { Star } from "lucide-react";
 import { useState, useEffect } from "react";
 import Autoplay from "embla-carousel-autoplay";
+import Image from "next/image";
 
 const testimonials = [
   {
@@ -20,27 +21,7 @@ const testimonials = [
     role: "Founder",
     company: "Aidcircle.in",
     rating: 5,
-    avatar: "/placeholder.svg?height=80&width=80",
-  },
-  {
-    id: 2,
-    quote:
-      "The Squirrel has been a reliable partner in developing AI-powered chatbots and complex web projects. Their solutions are always innovative and on-point.",
-    name: "Shodhan Moolya",
-    role: "Founder",
-    company: "Torq Designs",
-    rating: 5,
-    avatar: "/placeholder.svg?height=80&width=80",
-  },
-  {
-    id: 3,
-    quote:
-      "From design to deployment, The Squirrel's team captured our vision perfectly. Their responsiveness and commitment to quality are unmatched.",
-    name: "Cameron Norris",
-    role: "Co-founder",
-    company: "Social Hardware",
-    rating: 5,
-    avatar: "/placeholder.svg?height=80&width=80",
+    avatar: "/images/company1.png",
   },
   {
     id: 4,
@@ -50,8 +31,30 @@ const testimonials = [
     role: "Co-founder",
     company: "Social Hardware",
     rating: 5,
-    avatar: "/placeholder.svg?height=80&width=80",
+    avatar: "/images/company3.png",
   },
+  {
+    id: 2,
+    quote:
+      "The Squirrel has been a reliable partner in developing AI-powered chatbots and complex web projects. Their solutions are always innovative and on-point.",
+    name: "Shodhan Moolya",
+    role: "Founder",
+    company: "Torq Designs",
+    rating: 5,
+    avatar: "/images/company2.png",
+  },
+  {
+    id: 3,
+    quote:
+      "From design to deployment, The Squirrel's team captured our vision perfectly. Their responsiveness and commitment to quality are unmatched.",
+    name: "Cameron Norris",
+    role: "Co-founder",
+    company: "Social Hardware",
+    rating: 5,
+    avatar: "/images/company3.png",
+  },
+
+  
   {
     id: 5,
     quote:
@@ -60,7 +63,7 @@ const testimonials = [
     role: "Founder",
     company: "Quark Marketing",
     rating: 5,
-    avatar: "/placeholder.svg?height=80&width=80",
+    avatar: "/images/company4.png",
   },
 ];
 
@@ -137,13 +140,18 @@ export default function TestimonialsSection() {
                   key={testimonial.id}
                   className="rounded-4xl pl-2 md:pl-4 md:basis-1/2"
                 >
-                  <Card className="bg-white p-0 border-0 shadow-none h-full rounded-4xl">
+                  <Card className="bg-[#f1efef] p-0 border-0 shadow-none h-full rounded-4xl">
                     <CardContent className="p-8 md:p-10 flex flex-col h-full">
                       {/* Avatar with Pause Icon */}
-                      <div className="relative mb-8">
-                        <div className="size-12 primary-gradient rounded-full flex items-center justify-center">
-                          <Pause className="w-4 h-4 text-white fill-white" />
-                        </div>
+                      <div className="relative  h-20 w-40 flex items-center justify-start   ">
+                        <Image
+                          src={testimonial.avatar}
+                          alt={testimonial.name}
+                          quality={100}
+                          width={80}
+                          height={80}
+                          className="stroke stroke-black  "
+                        />
                       </div>
 
                       {/* Quote */}

@@ -1,17 +1,15 @@
-import { Facebook, Linkedin, Twitter } from "lucide-react"; 
+import { Linkedin, Twitter } from "lucide-react"; 
 import Image from "next/image";
 import React from "react";
 
 const footerLinks = {
   column1: [
-    { name: "About", href: "#about" },
+    { name: "Products", href: "#features" },
     { name: "Services", href: "#services" },
-    { name: "Our Work", href: "#our-work" },
-    { name: "Blog", href: "#blog" },
+    { name: "Faq's", href: "#faq" },
     { name: "Contact", href: "#contact" },
   ],
   column2: [
-    { name: "Faq's", href: "#faq" },
     { name: "Privacy Policy", href: "#privacy-policy" },
     { name: "Terms", href: "#terms" },
   ],
@@ -28,9 +26,9 @@ function Footer() {
                 src={"/images/logo.png"}
                 alt="Logo"
                 quality={100}
-                height={64}
+                height={80}
                 width={80}
-                className="h-12 w-16 sm:h-16 sm:w-20"
+                className="h-12 w-18 sm:h-18 sm:w-20"
               />
               <span className="text-black text-nowrap font-medium  text-2xl sm:text-5xl">
                 The Squirrel
@@ -69,30 +67,30 @@ function Footer() {
             </ul>
           </div>
           <div className="col-span-2 md:col-span-1 md:space-y-4 space-y-2">
-            <p className="text-gray-900 text-lg md:text-xl font-medium secondary-font">
+            {/* <p className="text-gray-900 text-lg md:text-xl font-medium secondary-font">
               210 Wallent Street, California,
               Main OC, USA
-            </p>
+            </p> */}
             <p className="text-gray-900 font-medium text-lg secondary-font">
-              (+91) 0187 34 377
+              (+91) 94496 10077
             </p>
 
             {/* Social Media Icons */}
             <div className="flex gap-3">
-              <a
+              {/* <a
                 href="#"
                 className="md:w-9 md:h-9 w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center text-white hover:bg-primary transition-colors"
               >
                 <Facebook className=" w-4 h-4" />
-              </a>
+              </a> */}
               <a
-                href="#"
+                href="https://x.com/thesquirrel_org"
                 className="md:w-9 md:h-9 w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center text-white hover:bg-primary transition-colors"
               >
                 <Twitter className=" w-4 h-4" />
               </a>
               <a
-                href="#"
+                href="https://www.linkedin.com/company/the-squirrel-tech"
                 className="md:w-9 md:h-9 w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center text-white  hover:bg-primary transition-colors"
               >
                 <Linkedin className=" w-4 h-4" />
@@ -102,8 +100,8 @@ function Footer() {
         </div>
 
         {/* Bottom Footer */}
-        <div className="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="flex gap-4 text-gray-600">
+        <div className="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-center items-center gap-4">
+          {/* <div className="flex gap-4 text-gray-600">
             <a
               href="#"
               className="hover:text-gray-900 transition-colors secondary-font"
@@ -124,7 +122,7 @@ function Footer() {
             >
               Careers
             </a>
-          </div>
+          </div> */}
           <p className="text-gray-600 secondary-font">
             ©2024 Retro. All Right Reserved
           </p>

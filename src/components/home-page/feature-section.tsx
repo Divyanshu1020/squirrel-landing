@@ -16,9 +16,9 @@ export default function FeatureSection() {
     },
     {
       icon: Camera,
-      title: "AI Product Protography",
+      title: "AI Product Photography",
       description:
-        "AI Product Protography that can be used to create product images for your website visitors.",
+        "AI Product Photography that can be used to create product Ads.",
     },
   ];
 
@@ -30,13 +30,10 @@ export default function FeatureSection() {
           <div className="space-y-4 font-semibold text-2xl">
             <h1 className=" font-semibold leading-tight font-poppins">
               <span className="multi-line-gradient block text-center sm:text-start  md:text-6xl text-4xl sm:text-5xl">
-                Generative voice
+                Our
                 <br />
-                AI platform
-                <br />
-                ensuring scale,
-                <br />
-                security.
+                Products
+                
               </span>
             </h1>
           </div>

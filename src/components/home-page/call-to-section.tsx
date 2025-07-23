@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "../ui/button";
+import Link from "next/link";
 
 function CallToSection() {
   return (
@@ -18,7 +19,7 @@ function CallToSection() {
               size="lg"
               className=" hover:bg-primary-gradient cursor-pointer  px-8 py-6 rounded-full text-lg font-medium  border-0 hover-primary-gradient secondary-font hover:text-white bg-white focus:text-white focus:bg-primary-gradient transition-all duration-400"
             >
-              Let&apos;s Get Started
+              <Link href='#contact' >Let&apos;s Get Started</Link>
             </Button>
           </div>
         </div>

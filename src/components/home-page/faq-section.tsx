@@ -9,35 +9,36 @@ import React from "react";
 const faqData = [
   {
     id: "01",
-    question: "What is web hosting?",
+    question: "Do you build custom websites or use templates?",
     answer:
-      "Web hosting is a service that allows organizations and individuals to post a website or web page onto the Internet. A web host, or web hosting service provider, is a business that provides the technologies and services needed for the website or webpage to be viewed in the Internet.",
+      "We build custom websites tailored to your business needs. Every design is unique, optimized for performance, and built with scalability in mind.",
   },
   {
     id: "02",
-    question: "How do you weigh different criteria in your process?",
+    question: "Can you integrate AI chatbots into my existing website?",
     answer:
-      "We evaluate multiple factors including performance, reliability, customer support, pricing, and scalability. Each criterion is weighted based on your specific business needs and requirements to ensure the best possible solution.",
+      "Absolutely. Our AI chatbot can be integrated into your current site to help you engage visitors, answer questions automatically, and increase conversions.",
   },
   {
     id: "03",
-    question: "What can I use to build my website?",
+    question: "How does AI automation help my business?",
     answer:
-      "You can use various tools and platforms such as WordPress, Wix, Squarespace, or custom development with HTML, CSS, and JavaScript. We also offer website building services and can recommend the best solution based on your technical expertise and requirements.",
+      "AI automation can streamline tasks like lead generation, customer support, and appointment scheduling—saving time and increasing efficiency.",
   },
   {
     id: "04",
-    question: "I have running plan, How can I change it?",
+    question: "What if I only have an idea — can you help build a prototype?",
     answer:
-      "You can easily change your current plan by logging into your account dashboard and selecting the 'Upgrade/Downgrade Plan' option. Alternatively, you can contact our support team who will assist you with the plan change process and ensure a smooth transition.",
+      "Yes, we specialize in turning early-stage ideas into working product prototypes, helping you validate your concept before investing in full development.",
   },
   {
     id: "05",
-    question: "How can I accept credit cards online?",
+    question: "Do I need technical knowledge to use your products?",
     answer:
-      "To accept credit cards online, you'll need a payment processor like Stripe, PayPal, or Square. We can help integrate these payment solutions into your website, ensuring secure transactions and compliance with industry standards.",
+      "Not at all. Our tools like the AI chatbot and Instagram booking system are built to be user-friendly. We also provide full setup and support.",
   },
 ];
+
 
 function FAQSection() {
   return (
