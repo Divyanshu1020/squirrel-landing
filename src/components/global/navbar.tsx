@@ -13,7 +13,11 @@ import { motion } from "framer-motion";
 import { Menu } from "lucide-react";
 import Link from "next/link";
 // import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -22,8 +26,9 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu"
+} from "@/components/ui/navigation-menu";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -67,7 +72,7 @@ export function Navbar() {
             className="flex items-center space-x-2"
             // whileHover={{ scale: 1.05 }}
           >
-          <Link href="/" className="flex items-center space-x-1 sm:space-x-2">
+            <Link href="/" className="flex items-center space-x-1 sm:space-x-2">
               <Image
                 src={"/images/logo.png"}
                 quality={100}
@@ -76,7 +81,11 @@ export function Navbar() {
                 alt="Logo"
                 className="h-8 w-10 sm:h-10 sm:w-12"
               />
-              <span className={` font-semibold text-sm sm:text-xl ${isHeroVisible ? "text-white" : "text-black"}`}>
+              <span
+                className={` font-semibold text-sm sm:text-xl ${
+                  isHeroVisible ? "text-white" : "text-black"
+                }`}
+              >
                 The Squirrel
               </span>
             </Link>
@@ -86,62 +95,100 @@ export function Navbar() {
           <NavigationMenu className="hidden md:block">
             <NavigationMenuList>
               <NavigationMenuItem>
-                <NavigationMenuLink asChild className={navigationMenuTriggerStyle() }>
-                  <Link className={`hover:text-primary ${isHeroVisible ? "text-white" : "text-black"}`} href="#home">Home</Link>
+                <NavigationMenuLink
+                  asChild
+                  className={navigationMenuTriggerStyle()}
+                >
+                  <Link
+                    className={`hover:text-primary ${
+                      isHeroVisible ? "text-white" : "text-black"
+                    }`}
+                    href="#home"
+                  >
+                    Home
+                  </Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuTrigger className={`hover:text-primary focus:text-primary ${isHeroVisible ? "text-white" : "text-black"}`}>Products</NavigationMenuTrigger>
+                <NavigationMenuTrigger
+                  className={`hover:text-primary focus:text-primary ${
+                    isHeroVisible ? "text-white" : "text-black"
+                  }`}
+                >
+                  Products
+                </NavigationMenuTrigger>
                 <NavigationMenuContent>
-            <ul className="grid w-[300px] gap-4">
-              <li>
-                <NavigationMenuLink asChild>
-                  <Link href="#">
-                    <div className="font-medium">AI Chatbot</div>
-                  </Link>
-                </NavigationMenuLink>
-                <NavigationMenuLink asChild>
-                  <Link href="#">
-                    <div className="font-medium">Appointment booking inside Instagram</div>
-                  </Link>
-                </NavigationMenuLink>
-                <NavigationMenuLink asChild>
-                  <Link href="#">
-                    <div className="font-medium">AI Product Protography</div>
-                  </Link>
-                </NavigationMenuLink>
-              </li>
-            </ul>
-          </NavigationMenuContent>
+                  <ul className="grid w-[300px] gap-4">
+                    <li>
+                      <NavigationMenuLink asChild>
+                        <Link href="#">
+                          <div className="font-medium">AI Chatbot</div>
+                        </Link>
+                      </NavigationMenuLink>
+                      <NavigationMenuLink asChild>
+                        <Link href="#">
+                          <div className="font-medium">
+                            Appointment booking inside Instagram
+                          </div>
+                        </Link>
+                      </NavigationMenuLink>
+                      <NavigationMenuLink asChild>
+                        <Link href="#">
+                          <div className="font-medium">
+                            AI Product Protography
+                          </div>
+                        </Link>
+                      </NavigationMenuLink>
+                    </li>
+                  </ul>
+                </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuTrigger className={`hover:text-primary focus:text-primary ${isHeroVisible ? "text-white" : "text-black"}`}>Services</NavigationMenuTrigger>
+                <NavigationMenuTrigger
+                  className={`hover:text-primary focus:text-primary ${
+                    isHeroVisible ? "text-white" : "text-black"
+                  }`}
+                >
+                  Services
+                </NavigationMenuTrigger>
                 <NavigationMenuContent>
-            <ul className="grid w-[300px] gap-4">
-              <li>
-                <NavigationMenuLink asChild>
-                  <Link href="#">
-                    <div className="font-medium">Website Development</div>
-                  </Link>
-                </NavigationMenuLink>
-                <NavigationMenuLink asChild>
-                  <Link href="#">
-                    <div className="font-medium">AI Automation</div>
-                  </Link> 
-                </NavigationMenuLink>
-                <NavigationMenuLink asChild>
-                  <Link href="#">
-                    <div className="font-medium">Building Product Prototype</div>
-                  </Link>
-                </NavigationMenuLink>
-              </li>
-            </ul>
-          </NavigationMenuContent>
+                  <ul className="grid w-[300px] gap-4">
+                    <li>
+                      <NavigationMenuLink asChild>
+                        <Link href="#">
+                          <div className="font-medium">Website Development</div>
+                        </Link>
+                      </NavigationMenuLink>
+                      <NavigationMenuLink asChild>
+                        <Link href="#">
+                          <div className="font-medium">AI Automation</div>
+                        </Link>
+                      </NavigationMenuLink>
+                      <NavigationMenuLink asChild>
+                        <Link href="#">
+                          <div className="font-medium">
+                            Building Product Prototype
+                          </div>
+                        </Link>
+                      </NavigationMenuLink>
+                    </li>
+                  </ul>
+                </NavigationMenuContent>
               </NavigationMenuItem>
-            
+
               <NavigationMenuItem>
-                <NavigationMenuLink asChild className={navigationMenuTriggerStyle() }>
-                  <Link className={`hover:text-primary ${isHeroVisible ? "text-white" : "text-black"}`} href="#contact">Contact</Link>
+                <NavigationMenuLink
+                  asChild
+                  className={navigationMenuTriggerStyle()}
+                >
+                  <Link
+                    className={`hover:text-primary ${
+                      isHeroVisible ? "text-white" : "text-black"
+                    }`}
+                    href="#contact"
+                  >
+                    Contact
+                  </Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
             </NavigationMenuList>
@@ -208,7 +255,10 @@ export function Navbar() {
                     : "text-black border-black"
                 } rounded-full hover:bg-white hover:text-primary`}
                 onClick={() => {
-                  window.open("https://dashboard.thesquirrel.tech/signup", "_blank");
+                  window.open(
+                    "https://dashboard.thesquirrel.tech/signup",
+                    "_blank"
+                  );
                 }}
               >
                 Sign Up
@@ -236,7 +286,7 @@ export function Navbar() {
                   </SheetTitle>
                 </SheetHeader>
                 <nav className="flex flex-col space-y-4 p-6 pt-2">
-                  <SheetClose asChild>
+                <SheetClose asChild>
                     <a
                       href="#home"
                       className="text-white text-center  hover:text-primary transition-colors py-2 text-xl  font-medium"
@@ -244,30 +294,73 @@ export function Navbar() {
                       Home
                     </a>
                   </SheetClose>
-                  <SheetClose asChild>
-                    <a
-                      href="#features"
-                      className="text-white text-center text-xl hover:text-primary transition-colors py-2 font-medium"
-                    >
-                      Features
-                    </a>
-                  </SheetClose>
-                  <SheetClose asChild>
-                    <Link
-                      href="#services"
-                      className="text-white text-center text-xl hover:text-primary transition-colors py-2 font-medium"
-                    >
+                  <Collapsible>
+                    <CollapsibleTrigger className="text-white w-full text-center  hover:text-primary transition-colors py-2 text-xl  font-medium"> 
+                      Products
+                    </CollapsibleTrigger>
+                    <CollapsibleContent>
+                      <ul className="grid  gap-4">
+                        <li>
+                          <SheetClose asChild>
+                            <Link href="https://chat.thesquirrel.tech/">
+                            <div className="w-full">
+                              <div className="text-white  text-center  hover:text-primary transition-colors text-base  font-medium text-wrap"> AI Chatbot</div>
+                            </div>
+                            </Link>
+                          </SheetClose>
+                          <SheetClose asChild>
+                            <Link href="http://smartinsta.thesquirrel.tech/">
+                              <div className="text-white w-full text-center  hover:text-primary transition-colors text-base  font-medium text-wrap">
+                                Appointment booking inside Instagram
+                              </div>
+                            </Link>
+                          </SheetClose>
+                          <SheetClose asChild>
+                            <Link href="#">
+                              <div className="text-white w-full text-center  hover:text-primary transition-colors text-base  font-medium text-wrap">
+                                AI Product Protography
+                              </div>
+                            </Link>
+                          </SheetClose>
+                        </li>
+                      </ul>
+                    </CollapsibleContent>
+                  </Collapsible>
+                  <Collapsible>
+                    <CollapsibleTrigger className="text-white w-full text-center  hover:text-primary transition-colors py-2 text-xl  font-medium"> 
                       Services
-                    </Link>
-                  </SheetClose>
-                  <SheetClose asChild>
-                    <Link
-                      href="#our-work"
-                      className="text-white text-center text-xl hover:text-primary transition-colors py-2 font-medium"
-                    >
-                      Our Work
-                    </Link>
-                  </SheetClose>
+                    </CollapsibleTrigger>
+                    <CollapsibleContent>
+                      <ul className="grid  gap-4">
+                        <li>
+                          <SheetClose asChild>
+                            <Link href="#">
+                            <div className="w-full">
+                              <div className="text-white  text-center  hover:text-primary transition-colors text-base  font-medium text-wrap"> Website Development</div>
+                            </div>
+                            </Link>
+                          </SheetClose>
+                          <SheetClose asChild>
+                            <Link href="#">
+                              <div className="text-white w-full text-center  hover:text-primary transition-colors text-base  font-medium text-wrap">
+                                AI Automation
+                              </div>
+                            </Link>
+                          </SheetClose>
+                          <SheetClose asChild>
+                            <Link href="#">
+                              <div className="text-white w-full text-center  hover:text-primary transition-colors text-base  font-medium text-wrap">
+                              Building Product Prototype
+                              </div>
+                            </Link>
+                          </SheetClose>
+                        </li>
+                      </ul>
+                    </CollapsibleContent>
+                  </Collapsible>
+                
+                
+                
                   <SheetClose asChild>
                     <Link
                       href="#contact"
