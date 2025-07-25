@@ -10,8 +10,8 @@ const footerLinks = {
     { name: "Contact", href: "#contact" },
   ],
   column2: [
-    { name: "Privacy Policy", href: "#privacy-policy" },
-    { name: "Terms", href: "#terms" },
+    { name: "Privacy Policy", href: "/privacy-policy" },
+    { name: "Terms and Conditions", href: "/terms-and-conditions" },
   ],
 };
 

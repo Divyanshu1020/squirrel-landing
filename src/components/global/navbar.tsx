@@ -133,9 +133,9 @@ export function Navbar() {
                         </Link>
                       </NavigationMenuLink>
                       <NavigationMenuLink asChild>
-                        <Link href="#">
+                        <Link href="/product/AI-product-photography">
                           <div className="font-medium">
-                            AI Product Protography
+                            AI Product Photography
                           </div>
                         </Link>
                       </NavigationMenuLink>
@@ -155,17 +155,17 @@ export function Navbar() {
                   <ul className="grid w-[300px] gap-4">
                     <li>
                       <NavigationMenuLink asChild>
-                        <Link href="#">
+                        <Link href="/service/website-development">
                           <div className="font-medium">Website Development</div>
                         </Link>
                       </NavigationMenuLink>
                       <NavigationMenuLink asChild>
-                        <Link href="#">
+                        <Link href="/service/AI-automation">
                           <div className="font-medium">AI Automation</div>
                         </Link>
                       </NavigationMenuLink>
                       <NavigationMenuLink asChild>
-                        <Link href="#">
+                        <Link href="/service/building-product-prototype">
                           <div className="font-medium">
                             Building Product Prototype
                           </div>
@@ -326,7 +326,7 @@ export function Navbar() {
                             </Link>
                           </SheetClose>
                           <SheetClose asChild>
-                            <Link href="#">
+                            <Link href="/product/AI-product-photography">
                               <div className="text-white w-full text-center  hover:text-primary transition-colors text-base  font-medium text-wrap">
                                 AI Product Protography
                               </div>
@@ -344,21 +344,21 @@ export function Navbar() {
                       <ul className="grid  gap-4">
                         <li>
                           <SheetClose asChild>
-                            <Link href="#">
+                            <Link href="/service/website-development">
                             <div className="w-full">
                               <div className="text-white  text-center  hover:text-primary transition-colors text-base  font-medium text-wrap"> Website Development</div>
                             </div>
                             </Link>
                           </SheetClose>
                           <SheetClose asChild>
-                            <Link href="#">
+                            <Link href="/service/AI-automation">
                               <div className="text-white w-full text-center  hover:text-primary transition-colors text-base  font-medium text-wrap">
                                 AI Automation
                               </div>
                             </Link>
                           </SheetClose>
                           <SheetClose asChild>
-                            <Link href="#">
+                            <Link href="/service/building-product-prototype">
                               <div className="text-white w-full text-center  hover:text-primary transition-colors text-base  font-medium text-wrap">
                               Building Product Prototype
                               </div>

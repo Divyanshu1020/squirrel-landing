@@ -23,7 +23,7 @@ function HeroSection() {
         </p>
         
         {/* CTA Button */}
-        <button className='group secondary-font flex items-center gap-3 bg-transparent border-2 border-white/30 hover:border-white text-white px-8 py-4 rounded-full transition-all duration-300 hover:bg-white/10 backdrop-blur-sm'>
+        <button className='group cursor-pointer secondary-font flex items-center gap-3 bg-transparent border-2 border-white/30 hover:border-white text-white px-8 py-4 rounded-full transition-all duration-300 hover:bg-white/10 backdrop-blur-sm'>
           <Link href="#contact" className='text-lg font-medium'>Get Started</Link>
           <div className='w-8 h-8 bg-white rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300'>
             <svg className='w-4 h-4 text-black' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
