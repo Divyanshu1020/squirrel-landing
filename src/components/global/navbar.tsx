@@ -28,12 +28,15 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isHeroVisible, setIsHeroVisible] = useState(true);
-  //   const pathname = usePathname();
+  const pathname = usePathname();
+
+  console.log("pathname", pathname);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -55,15 +58,21 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (pathname !== "/") {
+      setIsHeroVisible(false);
+    }
+  }, [pathname]);
+
   return (
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "backdrop-blur-md shadow-lg border-b border-white/20"
+          ? "backdrop-blur-md  shadow-lg border-b border-white/20"
           : "bg-transparent border-b border-white/20"
-      } ${isHeroVisible ? "text-white" : "text-black"}`}
+      } ${isHeroVisible ? "text-white" : "text-black bg-white/90"}`}
     >
       <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 text-white secondary-font">
         <div className="flex  items-center justify-between h-20 gap-16">
@@ -111,7 +120,7 @@ export function Navbar() {
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <NavigationMenuTrigger
-                  className={`hover:text-primary focus:text-primary ${
+                  className={`hover:text-primary focus:text-primary cursor-pointer ${
                     isHeroVisible ? "text-white" : "text-black"
                   }`}
                 >
@@ -128,7 +137,7 @@ export function Navbar() {
                       <NavigationMenuLink asChild>
                         <Link href="https://smartinsta.thesquirrel.tech/">
                           <div className="font-medium">
-                            Appointment booking inside Instagram
+                          Smart Instagram
                           </div>
                         </Link>
                       </NavigationMenuLink>
@@ -145,7 +154,7 @@ export function Navbar() {
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <NavigationMenuTrigger
-                  className={`hover:text-primary focus:text-primary ${
+                  className={`hover:text-primary focus:text-primary cursor-pointer ${
                     isHeroVisible ? "text-white" : "text-black"
                   }`}
                 >
@@ -185,7 +194,7 @@ export function Navbar() {
                     className={`hover:text-primary ${
                       isHeroVisible ? "text-white" : "text-black"
                     }`}
-                    href="#contact"
+                    href="/#contact"
                   >
                     Contact
                   </Link>
@@ -269,9 +278,8 @@ export function Navbar() {
                     ? "text-white border-white"
                     : "text-black border-black"
                 } rounded-full hover:bg-white hover:text-primary`}
-                
               >
-                <Link href="#contact" > Get Started </Link>
+                <Link href="/#contact"> Get Started </Link>
               </Button>
             </div>
           </div>
@@ -296,7 +304,7 @@ export function Navbar() {
                   </SheetTitle>
                 </SheetHeader>
                 <nav className="flex flex-col space-y-4 p-6 pt-2">
-                <SheetClose asChild>
+                  <SheetClose asChild>
                     <a
                       href="#home"
                       className="text-white text-center  hover:text-primary transition-colors py-2 text-xl  font-medium"
@@ -305,7 +313,7 @@ export function Navbar() {
                     </a>
                   </SheetClose>
                   <Collapsible>
-                    <CollapsibleTrigger className="text-white w-full text-center  hover:text-primary transition-colors py-2 text-xl  font-medium"> 
+                    <CollapsibleTrigger className="text-white w-full text-center  hover:text-primary transition-colors py-2 text-xl cursor-pointer  font-medium">
                       Products
                     </CollapsibleTrigger>
                     <CollapsibleContent>
@@ -313,15 +321,18 @@ export function Navbar() {
                         <li>
                           <SheetClose asChild>
                             <Link href="https://chat.thesquirrel.tech/">
-                            <div className="w-full">
-                              <div className="text-white  text-center  hover:text-primary transition-colors text-base  font-medium text-wrap"> AI Chatbot</div>
-                            </div>
+                              <div className="w-full">
+                                <div className="text-white  text-center  hover:text-primary transition-colors text-base  font-medium text-wrap">
+                                  {" "}
+                                  AI Chatbot
+                                </div>
+                              </div>
                             </Link>
                           </SheetClose>
                           <SheetClose asChild>
                             <Link href="http://smartinsta.thesquirrel.tech/">
                               <div className="text-white w-full text-center  hover:text-primary transition-colors text-base  font-medium text-wrap">
-                                Appointment booking inside Instagram
+                                Smart Instagram
                               </div>
                             </Link>
                           </SheetClose>
@@ -337,7 +348,7 @@ export function Navbar() {
                     </CollapsibleContent>
                   </Collapsible>
                   <Collapsible>
-                    <CollapsibleTrigger className="text-white w-full text-center  hover:text-primary transition-colors py-2 text-xl  font-medium"> 
+                    <CollapsibleTrigger className="text-white w-full text-center  hover:text-primary transition-colors py-2 text-xl cursor-pointer  font-medium">
                       Services
                     </CollapsibleTrigger>
                     <CollapsibleContent>
@@ -345,9 +356,12 @@ export function Navbar() {
                         <li>
                           <SheetClose asChild>
                             <Link href="/service/website-development">
-                            <div className="w-full">
-                              <div className="text-white  text-center  hover:text-primary transition-colors text-base  font-medium text-wrap"> Website Development</div>
-                            </div>
+                              <div className="w-full">
+                                <div className="text-white  text-center  hover:text-primary transition-colors text-base  font-medium text-wrap">
+                                  {" "}
+                                  Website Development
+                                </div>
+                              </div>
                             </Link>
                           </SheetClose>
                           <SheetClose asChild>
@@ -360,7 +374,7 @@ export function Navbar() {
                           <SheetClose asChild>
                             <Link href="/service/building-product-prototype">
                               <div className="text-white w-full text-center  hover:text-primary transition-colors text-base  font-medium text-wrap">
-                              Building Product Prototype
+                                Building Product Prototype
                               </div>
                             </Link>
                           </SheetClose>
@@ -368,12 +382,10 @@ export function Navbar() {
                       </ul>
                     </CollapsibleContent>
                   </Collapsible>
-                
-                
-                
+
                   <SheetClose asChild>
                     <Link
-                      href="#contact"
+                      href="/#contact"
                       className="text-white text-center text-xl hover:text-primary transition-colors py-2 font-medium"
                     >
                       Contact
@@ -385,13 +397,9 @@ export function Navbar() {
 
                     <div className="flex flex-col space-y-3 mb-8">
                       <Button
-                        variant="outline"
-                        className="w-full bg-transparent rounded-full text-white border-white border-2"
+                        className={`bg-transparent border px-6 text-lg  rounded-full hover:bg-white hover:text-primary`}
                       >
-                        Sign In
-                      </Button>
-                      <Button className="w-full rounded-full bg-white text-primary ">
-                        Sign Up
+                        <Link href="/#contact"> Get Started </Link>
                       </Button>
                     </div>
                   </div>

@@ -4,14 +4,24 @@ import React from "react";
 
 const footerLinks = {
   column1: [
-    { name: "Products", href: "#features" },
-    { name: "Services", href: "#services" },
-    { name: "Faq's", href: "#faq" },
-    { name: "Contact", href: "#contact" },
+    { name: "Products", href: "/#features" },
+    { name: "AI Chatbot", href: "https://chat.thesquirrel.tech/" },
+    { name: "AI Product Photography", href: "product/AI-product-photography" },
+    { name: "Smart Instagram", href: "https://smartinsta.thesquirrel.tech/" },
+
   ],
   column2: [
+    { name: "Services", href: "/#services" },
+    {name: "Website Development", href: "/service/website-development"},
+    {name: "AI Automation", href: "/service/AI-automation"},
+    {name: "Product Prototype", href: "/service/building-product-prototype"},
+
+  ],
+  column3: [
     { name: "Privacy Policy", href: "/privacy-policy" },
     { name: "Terms and Conditions", href: "/terms-and-conditions" },
+    { name: "Faq's", href: "/#faq" },
+    { name: "Contact", href: "/#contact" },
   ],
 };
 
@@ -19,7 +29,7 @@ function Footer() {
   return (
     <footer className="  ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
-        <div className="grid grid-cols-2  md:grid-cols-[1.5fr_1fr_1fr_1fr] gap-8 md:gap-8 lg:gap-14 mb-12">
+        <div className="grid grid-cols-2  lg:grid-cols-[1.5fr_1fr_1fr_1fr_1.5fr] gap-8 md:gap-8 lg:gap-14 mb-12">
           {/* Newsletter Subscription */}
           <div className="flex flex-col col-span-2 md:col-span-1     gap-1  ">
               <Image
@@ -38,11 +48,11 @@ function Footer() {
           {/* Navigation Links */}
           <div>
             <ul className="space-y-3">
-              {footerLinks.column1.map((link) => (
+              {footerLinks.column1.map((link, index) => (
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-gray-800 font-medium secondary-font hover:text-gray-900 transition-colors"
+                    className={`text-gray-800 font-medium secondary-font hover:text-gray-900 transition-colors ${index === 0 ? "font-extrabold " : "font-normal"}`}
                   >
                     {link.name}
                   </a>
@@ -54,7 +64,23 @@ function Footer() {
           {/* Contact Info */}
           <div className="">
             <ul className="space-y-3 mb-6">
-              {footerLinks.column2.map((link) => (
+              {footerLinks.column2.map((link, index) => (
+                <li key={link.name}>
+                  <a
+                    href={link.href}
+                    className={`text-gray-800 font-medium secondary-font hover:text-gray-900 transition-colors ${index === 0 ? "font-extrabold " : "font-normal"}`}
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact Info */}
+          <div className="">
+            <ul className="space-y-3 mb-6">
+              {footerLinks.column3.map((link) => (
                 <li key={link.name}>
                   <a
                     href={link.href}
@@ -124,7 +150,7 @@ function Footer() {
             </a>
           </div> */}
           <p className="text-gray-600 secondary-font">
-            ©2024 Retro. All Right Reserved
+            ©2025 The Squirrel. All Right Reserved
           </p>
         </div>
       </div>

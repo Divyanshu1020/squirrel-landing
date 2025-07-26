@@ -1,7 +1,9 @@
+import { Navbar } from "@/components/global/navbar";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Poppins,  } from "next/font/google";
-import "./globals.css";
+import { Geist, Geist_Mono, Poppins } from "next/font/google";
 import Head from "next/head";
+import "./globals.css";
+import Footer from "@/components/global/footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,7 +21,6 @@ const poppins = Poppins({
   subsets: ["latin"],
 });
 
-
 export const metadata: Metadata = {
   title: "The Squirrel",
 };
@@ -31,7 +32,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-       <Head>
+      <Head>
         <script
           id="vtag-ai-js"
           async
@@ -43,7 +44,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} antialiased`}
       >
-        {children}
+        <main className="min-h-screen relative ">
+          <Navbar />
+          {children}
+          <Footer />
+        </main>
       </body>
     </html>
   );

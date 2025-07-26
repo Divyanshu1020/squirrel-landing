@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import LocalVideoGallery from "./localVideoGallery";
 
 
 function AIProductPhotographyPage() {
@@ -64,7 +65,7 @@ function AIProductPhotographyPage() {
       <div className="mt-20 ">
         <div className=" mb-12">
           <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold leading-tight mb-6 multi-line-gradient font-poppins">
-            Gallery
+            Photo Gallery
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
             {data.map((item, index) => (
@@ -82,7 +83,7 @@ function AIProductPhotographyPage() {
           </div>
         </div>
       </div>
-
+`  <LocalVideoGallery/>`
       <section className="w-full lg:max-w-7xl mx-auto px-6 py-16 bg-background">
         <div className="flex flex-col md:flex-row items-center gap-12">
           {/* Left: Text Content */}
@@ -105,6 +106,8 @@ function AIProductPhotographyPage() {
           </div>
         </div>
       </section>
+
+    
     </section>
   );
 }
