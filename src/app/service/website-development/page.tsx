@@ -1,8 +1,8 @@
-import React from 'react'
+import WebsiteDevelopment from '@/components/service/website-development'
 
 function page() {
   return (
-    <div>Website Development</div>
+    <WebsiteDevelopment/>
   )
 }
 

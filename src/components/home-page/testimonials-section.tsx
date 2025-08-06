@@ -7,7 +7,6 @@ import {
   CarouselItem,
   CarouselApi,
 } from "@/components/ui/carousel";
-import { Star } from "lucide-react";
 import { useState, useEffect } from "react";
 import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
@@ -89,16 +88,16 @@ export default function TestimonialsSection() {
     };
   }, [api]);
 
-  const renderStars = (rating: number) => {
-    return Array.from({ length: 5 }, (_, i) => (
-      <Star
-        key={i}
-        className={`w-4 h-4 ${
-          i < rating ? "fill-yellow-400 text-yellow-400" : "text-gray-300"
-        }`}
-      />
-    ));
-  };
+  // const renderStars = (rating: number) => {
+  //   return Array.from({ length: 5 }, (_, i) => (
+  //     <Star
+  //       key={i}
+  //       className={`w-4 h-4 ${
+  //         i < rating ? "fill-yellow-400 text-yellow-400" : "text-gray-300"
+  //       }`}
+  //     />
+  //   ));
+  // };
 
   // Function to go to specific slide
   const goToSlide = (index: number) => {
@@ -166,13 +165,14 @@ export default function TestimonialsSection() {
                             {testimonial.name}
                           </h4>
                           <p className="text-gray-500 text-sm secondary-font">
-                            {testimonial.company}
+                            {testimonial.role}
                           </p>
                         </div>
 
                         {/* Star Rating */}
-                        <div className="flex gap-1">
-                          {renderStars(testimonial.rating)}
+                        <div className="font-semibold text-black text-lg secondary-font">
+                          {/* {renderStars(testimonial.rating)} */}
+                          {testimonial.company}
                         </div>
                       </div>
                     </CardContent>

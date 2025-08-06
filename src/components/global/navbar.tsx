@@ -136,9 +136,7 @@ export function Navbar() {
                       </NavigationMenuLink>
                       <NavigationMenuLink asChild>
                         <Link href="https://smartinsta.thesquirrel.tech/">
-                          <div className="font-medium">
-                          Smart Instagram
-                          </div>
+                          <div className="font-medium">Smart Insta</div>
                         </Link>
                       </NavigationMenuLink>
                       <NavigationMenuLink asChild>
@@ -275,9 +273,9 @@ export function Navbar() {
               <Button
                 className={`bg-transparent border px-6 text-lg ${
                   isHeroVisible
-                    ? "text-white border-white"
-                    : "text-black border-black"
-                } rounded-full hover:bg-white hover:text-primary`}
+                    ? "text-white border-white hover:border-primary"
+                    : "text-black border-black hover:border-primary "
+                } rounded-full hover:bg-white hover:text-primary `}
               >
                 <Link href="/#contact"> Get Started </Link>
               </Button>
@@ -332,7 +330,7 @@ export function Navbar() {
                           <SheetClose asChild>
                             <Link href="http://smartinsta.thesquirrel.tech/">
                               <div className="text-white w-full text-center  hover:text-primary transition-colors text-base  font-medium text-wrap">
-                                Smart Instagram
+                                Smart Insta
                               </div>
                             </Link>
                           </SheetClose>

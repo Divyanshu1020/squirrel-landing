@@ -2,7 +2,6 @@ import Image from "next/image";
 import React from "react";
 import LocalVideoGallery from "./localVideoGallery";
 
-
 function AIProductPhotographyPage() {
   const data = [
     {
@@ -34,10 +33,10 @@ function AIProductPhotographyPage() {
     },
   ];
   return (
-    <section className="w-full lg:max-w-7xl mx-auto px-6 py-16 bg-background">
+    <section className="w-full lg:max-w-7xl mt-10 md:mt-24 mx-auto px-6 py-16 bg-background">
       <div className="flex flex-col md:flex-row items-center gap-12">
         {/* Left: Logo or Product Image */}
-        <div className="w-full md:w-fit flex justify-center">
+        {/* <div className="w-full md:w-fit flex justify-center">
           <div className="relative w-full h-auto">
             <Image
               src="/images/logo.png"
@@ -48,26 +47,32 @@ function AIProductPhotographyPage() {
               quality={100}
             />
           </div>
-        </div>
+        </div> */}
 
         {/* Right: Text Content */}
-        <div className="w-full  text-center md:text-left">
+        <div className="w-full  text-left ">
           <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold leading-tight mb-6 multi-line-gradient font-poppins mx-auto">
             AI Product <br /> Photography
           </h2>
-          <p className="text-lg md:text-xl text-gray-600 font-medium mb-8">
-            We create stunning AI-generated videos and images that showcase your
-            products like never before. Perfect for ads, ecommerce, and social
-            media campaigns — without the cost of traditional photography.
+          <p className="text-lg md:text-xl text-gray-600 font-medium mb-8 leading-tight px-7 ">
+            Say goodbye to expensive photoshoots and long turnaround times. Our
+            cutting-edge AI technology creates stunning, high-resolution product
+            images and videos that match the quality of traditional studio
+            photography — at a fraction of the cost. Whether you&apos;re launching a
+            new product, running ad campaigns, or managing an ecommerce store,
+            we help you get professional results in hours, not days. Save money,
+            save time, and stay ahead of the competition with visuals that drive
+            engagement and sales — all without ever stepping into a studio.
           </p>
         </div>
       </div>
+      <LocalVideoGallery />
       <div className="mt-20 ">
-        <div className=" mb-12">
+        <div className=" mb-12 ">
           <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold leading-tight mb-6 multi-line-gradient font-poppins">
             Photo Gallery
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 px-7">
             {data.map((item, index) => (
               <div className="relative w-full h-auto" key={index}>
                 <Image
@@ -83,31 +88,27 @@ function AIProductPhotographyPage() {
           </div>
         </div>
       </div>
-`  <LocalVideoGallery/>`
-      <section className="w-full lg:max-w-7xl mx-auto px-6 py-16 bg-background">
+    
+      <section className="w-full lg:max-w-7xl mx-auto  py-16 bg-background">
         <div className="flex flex-col md:flex-row items-center gap-12">
           {/* Left: Text Content */}
           <div className="w-full  text-center md:text-left">
             <h2 className="text-4xl sm:text-5xl font-bold mb-6 leading-tight multi-line-gradient font-poppins">
               About Us
             </h2>
-            <p className="text-lg md:text-xl text-muted-foreground  font-medium">
+            <p className="px-7 text-lg md:text-xl text-muted-foreground  font-medium">
               We’re a creative tech team building next-gen digital experiences
-              for modern brands.
-              From AI-generated media to full-stack product development, we
-              deliver innovative solutions tailored for growth.
+              for modern brands. From AI-generated media to full-stack product
+              development, we deliver innovative solutions tailored for growth.
               Our mission is to make high-end content creation and automation
-              accessible to everyone.
-              Whether you&apos;re a startup or an enterprise, we help you stand out
-              with bold visuals and smart technology.
-              We value speed, quality, and storytelling — merging creativity
-              with code.
+              accessible to everyone. Whether you&apos;re a startup or an
+              enterprise, we help you stand out with bold visuals and smart
+              technology. We value speed, quality, and storytelling — merging
+              creativity with code.
             </p>
           </div>
         </div>
       </section>
-
-    
     </section>
   );
 }

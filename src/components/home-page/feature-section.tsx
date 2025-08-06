@@ -1,4 +1,4 @@
-import { MessageCircleMore, Bot, Camera } from "lucide-react";
+import { Bot, Camera, MessageCircleMore } from "lucide-react";
 import Card from "../global/card";
 
 export default function FeatureSection() {
@@ -6,19 +6,23 @@ export default function FeatureSection() {
     {
       icon: MessageCircleMore,
       title: "AI Chatbot for Website",
-      description: "AI Chatbot for Website that can be used to chat with your website visitors.",
+      description:
+        "AI Chatbot for Website that can be used to chat with your website visitors.",
+      href: "https://chat.thesquirrel.tech/",
     },
     {
       icon: Bot,
-      title: "Appointment Booking inside Instagram",
+      title: "Smart Insta",
       description:
         "Appointment Booking inside Instagram that can be used to book appointments with your website visitors.",
+      href: "https://smartinsta.thesquirrel.tech/",
     },
     {
       icon: Camera,
       title: "AI Product Photography",
       description:
         "AI Product Photography that can be used to create product Ads.",
+      href: "/product/AI-product-photography",
     },
   ];
 
@@ -33,7 +37,6 @@ export default function FeatureSection() {
                 Our
                 <br />
                 Products
-                
               </span>
             </h1>
           </div>

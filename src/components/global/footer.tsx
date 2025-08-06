@@ -1,4 +1,4 @@
-import { Linkedin, Twitter } from "lucide-react"; 
+import { Instagram, Linkedin, Twitter } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 
@@ -7,15 +7,13 @@ const footerLinks = {
     { name: "Products", href: "/#features" },
     { name: "AI Chatbot", href: "https://chat.thesquirrel.tech/" },
     { name: "AI Product Photography", href: "product/AI-product-photography" },
-    { name: "Smart Instagram", href: "https://smartinsta.thesquirrel.tech/" },
-
+    { name: "Smart Insta", href: "https://smartinsta.thesquirrel.tech/" },
   ],
   column2: [
     { name: "Services", href: "/#services" },
-    {name: "Website Development", href: "/service/website-development"},
-    {name: "AI Automation", href: "/service/AI-automation"},
-    {name: "Product Prototype", href: "/service/building-product-prototype"},
-
+    { name: "Website Development", href: "/service/website-development" },
+    { name: "AI Automation", href: "/service/AI-automation" },
+    { name: "Product Prototype", href: "/service/building-product-prototype" },
   ],
   column3: [
     { name: "Privacy Policy", href: "/privacy-policy" },
@@ -28,22 +26,22 @@ const footerLinks = {
 function Footer() {
   return (
     <footer className="  ">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-6 pt-16 pb-8">
         <div className="grid grid-cols-2  lg:grid-cols-[1.5fr_1fr_1fr_1fr_1.5fr] gap-8 md:gap-8 lg:gap-14 mb-12">
           {/* Newsletter Subscription */}
           <div className="flex flex-col col-span-2 md:col-span-1     gap-1  ">
-              <Image
-                src={"/images/logo.png"}
-                alt="Logo"
-                quality={100}
-                height={80}
-                width={80}
-                className="h-12 w-18 sm:h-18 sm:w-20"
-              />
-              <span className="text-black text-nowrap font-medium  text-2xl sm:text-5xl">
-                The Squirrel
-              </span>
-            </div>
+            <Image
+              src={"/images/logo.png"}
+              alt="Logo"
+              quality={100}
+              height={80}
+              width={80}
+              className="h-12 w-18 sm:h-18 sm:w-20"
+            />
+            <span className="text-black text-nowrap font-medium  text-2xl sm:text-5xl">
+              The Squirrel
+            </span>
+          </div>
 
           {/* Navigation Links */}
           <div>
@@ -52,7 +50,11 @@ function Footer() {
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className={`text-gray-800 font-medium secondary-font hover:text-gray-900 transition-colors ${index === 0 ? "font-extrabold " : "font-normal"}`}
+                    className={` font-medium secondary-font hover:text-gray-800 transition-colors ${
+                      index === 0
+                        ? "font-extrabold text-xl text-black"
+                        : "font-normal text-gray-600"
+                    }`}
                   >
                     {link.name}
                   </a>
@@ -68,7 +70,11 @@ function Footer() {
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className={`text-gray-800 font-medium secondary-font hover:text-gray-900 transition-colors ${index === 0 ? "font-extrabold " : "font-normal"}`}
+                    className={` font-medium secondary-font hover:text-gray-800 transition-colors ${
+                      index === 0
+                        ? "font-extrabold text-xl text-black "
+                        : "font-normal text-gray-600"
+                    }`}
                   >
                     {link.name}
                   </a>
@@ -84,7 +90,7 @@ function Footer() {
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-gray-800 font-medium secondary-font hover:text-gray-900 transition-colors"
+                    className="text-gray-600 font-normal secondary-font hover:text-gray-800 transition-colors"
                   >
                     {link.name}
                   </a>
@@ -103,12 +109,12 @@ function Footer() {
 
             {/* Social Media Icons */}
             <div className="flex gap-3">
-              {/* <a
-                href="#"
+              <a
+                href="https://www.instagram.com/the.squirrel.tech?igsh=MWZseTg2bzRjdGg1eQ=="
                 className="md:w-9 md:h-9 w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center text-white hover:bg-primary transition-colors"
               >
-                <Facebook className=" w-4 h-4" />
-              </a> */}
+                <Instagram className=" w-4 h-4" />
+              </a>
               <a
                 href="https://x.com/thesquirrel_org"
                 className="md:w-9 md:h-9 w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center text-white hover:bg-primary transition-colors"

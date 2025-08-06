@@ -8,16 +8,19 @@ function ServicesSection() {
       icon: Boxes,
       title: "Website Development",
       description: "Website Development for businesses.",
+      href: "/service/website-development",
     },
     {
       icon: Workflow,
       title: "AI Automation",
       description: "AI Automation for businesses.",
+      href: "/service/AI-automation",
     },
     {
       icon: Briefcase,
       title: "Building Product Prototype",
       description: "Building Product Prototype for businesses.",
+      href: "/service/building-product-prototype",
     },
   ];
   return (

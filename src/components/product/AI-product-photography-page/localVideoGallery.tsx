@@ -24,7 +24,7 @@ export default function LocalVideoGallery() {
                 autoPlay
                 loop
                 muted
-                className="w-fit h-auto bg-black   max-h-[600px] rounded-2xl"
+                className="w-fit h-auto bg-black max-w-[337px]   max-h-[600px] rounded-2xl"
               >
                 <source src={video.src} type="video/mp4" />
                 Your browser does not support the video tag.
